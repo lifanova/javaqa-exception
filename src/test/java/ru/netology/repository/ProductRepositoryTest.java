@@ -10,14 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductRepositoryTest {
     private ProductRepository repository;
-    private Product[] products;
 
 
     @BeforeEach
     public void PrepareData() {
         repository = new ProductRepository();
-        products = new Product[2];
-            }
+    }
 
     @Test
     void shouldRemoveByExistingId() {
@@ -37,7 +35,7 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void shouldRemoveByIdNotExist(){
+    void shouldRemoveByIdNotExist() {
         assertThrows(NotFoundException.class, () -> repository.removeById(4));
     }
 }
